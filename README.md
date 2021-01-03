@@ -6,3 +6,11 @@ mongoose
 express
 -g nodemon
 body-parser
+
+
+
+
+to run use:
+npm run 
+    or
+nodemon app.js (js optional)

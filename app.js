@@ -20,9 +20,38 @@ app.use('/static', express.static('static'));
 app.use(express.urlencoded())       //To get data fom the page and add mongo database.
 
 
-//SET VIEW ENGINE TO HTML
-app.set('views', path.join(__dirname, '/view'));// Set the views directory
+//SET TEMPLETING
+app.set('views', path.join(__dirname, '/view'));
 app.set('view engine', 'ejs'); 
+
+
+//DATABASE STUFFS
+// 1). Getting started
+const mongoose = require('mongoose');
+const bodyparser = require('body-parser');
+mongoose.connect('mongodb://localhost/For_Internship', { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+
+db.once("open", function () {
+    console.log("Connection Successfu with Database For_internship!!");
+});
+
+
+// 2). Creating a schema
+const createEmp = new mongoose.Schema({
+    userName: String,
+    password: String,
+    'main-id': String
+});
+
+// 3). Creating a model
+const createEmpe = mongoose.model('employee', createEmp);   //Name of collection is employees
+
+
+
+
+
 
 
 //END POINTS
@@ -31,6 +60,9 @@ app.get("/", (req, res) => {
 });
 app.get("/index", (req, res) => {
     res.render('index');
+});
+app.post("/validate", () => {
+
 });
 app.get("/admin_loggedIn", (req, res) => {
     res.render('admin');

@@ -4,61 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/styleIndex.css">
     <title>Login</title>
 </head>
 
 <body>
-    Login form
-    login <form action="app.js" method="post">
-        name: <input type="text" name="name" id="uName">
-        <input type="submit" value="Login">
-    </form>
-    <ul>
-        <li><a href="/">home</a></li>
-        <li><a href="/index">home 2</a></li>
-        <li><a href="/admin_loggedIn">admin</a></li>
-        <li><a href="/employee_loggedIn">Employee</a></li>
-    </ul>
+    <header class="header">
+        <h1 class="logo"><a href="/">With-Flexbox</a></h1>
+        <ul class="main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/index">Home 2</a></li>
+            <li><a href="/admin_loggedIn">Admin</a></li>
+            <li><a href="/employee_loggedIn">Employee</a></li>
+        </ul>
+    </header>
+    <div class="content">
+        <marquee behavior="scroll" direction="right" scrollamount="4">Body content</marquee>
+        Login form
+        <form action="app.js" method="post">
+            User-ID: <input type="text" name="UID" id="UID"><br>
+            Password: <input type="password" name="pass" id="pass"><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
 
 </body>
-
 </html>
-<!-- 
-    var data = {name:'Akashdeep', 
-    hobbies:['playing football', 'playing chess', 'cycling']} 
-  
-res.render('home', {data:data}); 
-}); 
-  
-var server = app.listen(4000, function() { 
-    console.log('listining to port 4000') 
-}); 
-The final HTML content:
-
-filter_none
-brightness_5
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <title>Home Page</title> 
-    <style type="text/css" media="screen"> 
-        body { 
-            background-color: skyblue; 
-            text-decoration-color: white; 
-            font-size:5em;  
-        } 
-    </style> 
-</head> 
-  
-<body> 
-    Hobbies of <%=data.name%> are:<br/> 
-      
-    <ul> 
-        <% data.hobbies.forEach((item)=>{%> 
-        <li><%=item%></li>  
-        <%});%> 
-    </ul> 
-</body> 
-  
-</html>  -->
