@@ -29,6 +29,7 @@ app.set('view engine', 'ejs');
 // 1). Getting started
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
+const { timeStamp } = require("console");
 mongoose.connect('mongodb://localhost/For_Internship', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -40,13 +41,17 @@ db.once("open", function () {
 
 // 2). Creating a schema
 const createEmp = new mongoose.Schema({
-    userName: String,
-    password: String,
-    'main-id': String
-});
+    name: { type: String },
+    email: { type: String },
+    phone: { type: String },
+    password: { type: String }
+},
+    {
+        timeStamp: true 
+    });
 
 // 3). Creating a model
-const createEmpe = mongoose.model('employee', createEmp);   //Name of collection is employees
+const employee = mongoose.model('employee', createEmp);   //collection name: employees
 
 
 
