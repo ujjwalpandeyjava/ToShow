@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styleIndex.css">
+    <title>Login</title>
+</head>
+
+<body>
+    Login form
+    login <form action="app.js" method="post">
+        name: <input type="text" name="name" id="uName">
+        <input type="submit" value="Login">
+    </form>
+    <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/index">home 2</a></li>
+        <li><a href="/admin_loggedIn">admin</a></li>
+        <li><a href="/employee_loggedIn">Employee</a></li>
+    </ul>
+
+</body>
+
+</html>
+<!-- 
+    var data = {name:'Akashdeep', 
+    hobbies:['playing football', 'playing chess', 'cycling']} 
+  
+res.render('home', {data:data}); 
+}); 
+  
+var server = app.listen(4000, function() { 
+    console.log('listining to port 4000') 
+}); 
+The final HTML content:
+
+filter_none
+brightness_5
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Home Page</title> 
+    <style type="text/css" media="screen"> 
+        body { 
+            background-color: skyblue; 
+            text-decoration-color: white; 
+            font-size:5em;  
+        } 
+    </style> 
+</head> 
+  
+<body> 
+    Hobbies of <%=data.name%> are:<br/> 
+      
+    <ul> 
+        <% data.hobbies.forEach((item)=>{%> 
+        <li><%=item%></li>  
+        <%});%> 
+    </ul> 
+</body> 
+  
+</html>  -->
